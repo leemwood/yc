@@ -1,11 +1,11 @@
-# GeyserExtras - Spigot Configuration
+# GeyserExtras - Spigot 配置
 
-# Forces block placements to not be hold-bridgable/scaffold-bridgeable.
-# Requires 'disable-bedrock-scaffolding: true' in Geyser's config for forward block placements.
+# 强制方块放置不可被手持方块搭桥/脚手架搭桥。
+# 需要在 Geyser 的配置中设置 'disable-bedrock-scaffolding: true' 才能进行向前方块放置。
 enable-java-only-block-placement: false
 
-# Updates the blocks at the player's line of sight every tick to remove ghost blocks.
-enable-block-ghosting-workaround: false
+# 每刻更新玩家视线中的方块以移除幽灵方块。
+enable-block-ghosting-workaround: true
 
-# The version of the config. DO NOT CHANGE!
+# 配置版本。请勿更改！
 version: 1
