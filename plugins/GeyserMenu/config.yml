@@ -1,0 +1,136 @@
+# GeyserMenu 配置文件
+# 作者: 柠枺
+# 版本: 1.1.8
+
+# 插件基础设置
+settings:
+  # 默认菜单文件名 - 当玩家直接使用/gmenu时打开的菜单
+  default-menu: "menu.yml"
+  
+  # 调试模式 - 启用后会输出更多日志信息
+  debug: false
+  
+  # 性能优化设置
+  performance:
+    # 命令执行延迟（毫秒）- 防止命令执行过快导致服务器卡顿
+    command-delay: 0
+    
+    # 是否缓存PAPI变量结果 - 可以提高性能，但变量更新会有延迟
+    cache-placeholders: false
+    
+    # 缓存刷新间隔（秒）- 仅在启用变量缓存时生效
+    cache-refresh: 30
+    
+    # 最大缓存数量 - 防止缓存占用过多内存
+    max-cache-size: 1000
+    
+    # 是否在重载时清除缓存
+    clear-cache-on-reload: true
+    
+  # 命令安全检查 - 防止执行危险命令
+  enable-command-security: true
+  
+  # 是否检查更新
+  check-updates: true
+  
+  # 更新源设置
+  update:
+    # 是否在玩家进入时提示更新
+    notify-on-join: true
+    
+    # 是否只通知管理员
+    notify-ops-only: false
+
+# 菜单配置 - 在这里定义所有可用的菜单
+menus:
+  # 主菜单配置
+  main:
+    # 菜单文件名
+    file: "menu.yml"
+    # 是否启用此菜单
+    enable: true
+    # 使用此菜单需要的权限（可选）
+    permission: "geysermenu.menu.main"
+  
+  # 传送菜单配置
+  teleport:
+    file: "teleport.yml"
+    enable: true
+    permission: "geysermenu.menu.teleport"
+  
+  # 商店菜单配置
+  shop:
+    file: "shop.yml"
+    enable: true
+    permission: "geysermenu.menu.shop"
+  
+  # 示例：禁用的菜单
+  example:
+    file: "example.yml"
+    enable: false
+  
+  forms:
+    file: "forms.yml"
+    enable: true
+    permission: "geysermenu.menu.forms"
+
+# 图标设置
+icons:
+  # 默认图标
+  default: "textures/items/paper"
+  
+  # 图标类型映射 (Java版 -> 基岩版)
+  mappings:
+    # 方块
+    grass_block: "textures/blocks/grass_side"
+    stone: "textures/blocks/stone"
+    dirt: "textures/blocks/dirt"
+    diamond_block: "textures/blocks/diamond_block"
+    oak_log: "textures/blocks/log_oak"
+    oak_planks: "textures/blocks/planks_oak"
+    
+    # 物品
+    diamond: "textures/items/diamond"
+    diamond_sword: "textures/items/diamond_sword"
+    diamond_pickaxe: "textures/items/diamond_pickaxe"
+    compass: "textures/items/compass_item"
+    clock: "textures/items/clock_item"
+    paper: "textures/items/paper"
+    book: "textures/items/book_normal"
+    writable_book: "textures/items/book_writable"
+    written_book: "textures/items/book_written"
+    nether_star: "textures/items/nether_star"
+    arrow: "textures/items/arrow"
+    chest: "textures/blocks/chest_front"
+
+# 安全设置
+security:
+  # 禁止执行的命令列表
+  blocked-commands:
+    - "op"
+    - "deop"
+    - "stop"
+    - "reload"
+    
+  # 是否允许命令中包含特殊字符(如 & | ; 等)
+  allow-special-chars: false
+  
+  # 是否检查文件路径安全性 - 防止目录遍历攻击
+  check-file-path: true
+
+# 权限节点配置
+permissions:
+  geysermenu.menu.*:
+    description: 允许使用所有菜单
+    default: op
+    children:
+      geysermenu.menu.main: true
+      geysermenu.menu.teleport: true
+      geysermenu.menu.shop: true
+
+# 错误消息配置
+messages:
+  error:
+    no-menu-permission: "§c你没有权限使用此菜单!"
+    invalid-menu: "§c无效的菜单配置!"
+    command-blocked: "§c此命令已被禁用!"

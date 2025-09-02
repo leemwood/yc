@@ -1,0 +1,64 @@
+# GeyserExtras
+# 如果检测到 Geyser，所有必要的配置更改将自动应用。
+# 更多详情，请访问 https://geyserextras.github.io/
+
+# 启用 GeyserExtras 菜单，玩家可以通过双击物品栏或输入 `/ge` 打开此菜单。
+#  
+# GeyserExtras 菜单提供以下功能和可配置设置：
+# - 将某些操作（例如表情/选择方块）重新映射为仅限 Java 版的操作（例如副手）
+# - 可配置的 HUD 可见性
+# - 快速访问 Java 版菜单的表单重制（例如玩家列表、成就、统计信息）。
+#  
+# 您可以在以下路径配置 Bedrock 玩家的默认选项：
+# `preferences/default.json`
+# 以及 Java 玩家的默认选项：
+# `preferences/java/default.json`.
+#  
+# 将此设置为 `false` 也会禁用偏好保存。
+enable-geyser-extras-menu: true
+
+# 启用 Java 版样式的冷却时间。
+enable-custom-cooldown: true
+
+# 启用 Java 版战斗声音。
+enable-java-combat-sounds: true
+
+# 启用使用 FMBE 的方块显示实体修复（实验性）。
+# 注意，翻译并非 100% 准确，某些方块类型可能不可见（蜡烛、门、营火），
+# 而一些方块会渲染不同（围栏、玻璃窗格、一些储存容器）。
+# 方块显示公告牌不起作用，并且 X/Z 缩放取决于哪个更高，
+# 这意味着此功能应仅用于非常简单的方块显示用途。
+# (https://wiki.bedrock.dev/commands/display-entities.html)
+enable-block-display-workaround: false
+
+# 当服务器关闭或 Geyser 重新加载时，GeyserExtras 是否应使用以下地址重新连接到服务器。
+auto-reconnect: true
+
+# Java 版玩家在使用 GeyserExtras 命令（例如，`/muteemotechat`）时读取的语言。
+# 此语言会根据 Bedrock 版玩家的设置自动设置。
+# 您可以在此处查看所有语言代码：
+# https://github.com/GeyserExtras/data/blob/main/langs/language_names.json
+default-locale: zh_CN
+
+# 启用下载 Bedrock 玩家皮肤。
+# 这将下载玩家皮肤的几何形状、动画和纹理。
+# Persona 皮肤目前存在 bug。
+enable-skin-saving: true
+
+# 是否禁用纸娃娃。
+# 纸娃娃是 Bedrock 玩家屏幕左上角的小玩家图形。
+# 在某些情况下，这可能会给 Bedrock 玩家带来相对于 Java 玩家的竞争优势，例如，
+# 您可以在不按物品栏键的情况下看到自己穿了什么盔甲，
+# 您可以在战斗中看到哪些盔甲已经损坏。
+disable-paper-doll: false
+
+# 是否检查更新。
+# 这也会禁用 GeyserExtrasPack 和 GeyserOptionalPack 的更新，
+# 但是您可以通过删除 'GeyserExtras/cache/' 文件夹手动更新它们。
+check-for-updates: false
+
+# 仅在您知道自己在做什么时启用。
+debug-mode: false
+
+# 配置版本。请勿更改！
+version: 3

@@ -1,0 +1,205 @@
+# Leaves 服务器配置文件
+# 此文件包含了 Leaves 服务器的各种功能配置选项
+
+settings: # 主要设置
+  modify: # 修改器设置
+    fakeplayer: # 假人设置
+      enable: true # 是否启用假人
+      unable-fakeplayer-names: # 无法生成假人的玩家名称列表
+        - player-name
+      limit: 10 # 假人数量限制
+      prefix: bot_ # 假人名称前缀
+      suffix: '' # 假人名称后缀
+      regen-amount: 0.0 # 假人生命恢复量
+      resident-fakeplayer: true # 是否启用常驻假人
+      open-fakeplayer-inventory: true # 是否允许打开假人背包
+      use-action: true # 是否使用假人动作
+      modify-config: false # 是否允许假人修改配置
+      manual-save-and-load: false # 是否手动保存和加载假人数据
+      cache-skin: false # 是否缓存假人皮肤
+      in-game: # 游戏内假人设置
+        always-send-data: true # 是否始终发送假人数据
+        skip-sleep-check: true # 是否跳过睡眠检查
+        spawn-phantom: false # 是否生成幻翼
+        tick-type: NETWORK # 假人刻类型
+        simulation-distance: 4 # 假人模拟距离
+        enable-locator-bar: false # 是否启用定位器栏
+    minecraft-old: # 旧版Minecraft特性设置
+      block-updater: # 方块更新器设置
+        instant-block-updater-reintroduced: false # 是否重新引入即时方块更新器
+        cce-update-suppression: false # 是否启用CCE更新抑制
+        sound-update-suppression: false # 是否启用声音更新抑制
+        redstone-ignore-upwards-update: false # 红石是否忽略向上更新
+        old-block-remove-behaviour: false # 是否启用旧版方块移除行为
+      shears-in-dispenser-can-zero-amount: false # 发射器中的剪刀是否能将数量归零
+      armor-stand-cant-kill-by-mob-projectile: false # 盔甲架是否不能被生物投掷物杀死
+      villager-infinite-discounts: false # 村民是否无限折扣
+      copper-bulb-1gt-delay: false # 铜灯是否1游戏刻延迟
+      crafter-1gt-delay: false # 合成台是否1游戏刻延迟
+      zero-tick-plants: false # 是否启用零刻植物
+      rng-fishing: false # 是否启用随机钓鱼
+      allow-grindstone-overstacking: false # 是否允许磨石超堆叠
+      allow-entity-portal-with-passenger: true # 是否允许实体携带乘客通过传送门
+      disable-gateway-portal-entity-ticking: false # 是否禁用末地折跃门实体刻
+      disable-LivingEntity-ai-step-alive-check: false # 是否禁用LivingEntity AI步进存活检查
+      spawn-invulnerable-time: false # 是否启用出生无敌时间
+      old-hopper-suck-in-behavior: false # 是否启用旧版漏斗吸入行为
+      old-zombie-piglin-drop: false # 是否启用旧版僵尸猪灵掉落
+      old-raid-behavior: false # 是否启用旧版袭击行为
+      old-zombie-reinforcement: false # 是否启用旧版僵尸增援
+      allow-anvil-destroy-item-entities: false # 是否允许铁砧破坏物品实体
+      tripwire-and-hook-behavior: # 绊线和绊线钩行为设置
+        string-tripwire-hook-duplicate: false # 绊线钩是否复制线
+        tripwire-behavior: VANILLA_21 # 绊线行为
+      void-trade: false # 是否启用虚空交易
+      disable-item-damage-check: false # 是否禁用物品伤害检查
+      old-throwable-projectile-tick-order: false # 是否启用旧版投掷物刻序
+      keep-leash-connect-when-use-firework: false # 使用烟花时是否保持拴绳连接
+      tnt-wet-explosion-no-item-damage: false # 湿地TNT爆炸是否不造成物品伤害
+      old-projectile-explosion-behavior: false # 是否启用旧版投掷物爆炸行为
+      ender-dragon-part-can-use-end-portal: false # 末影龙部分是否可以使用末地传送门
+    elytra-aeronautics: # 鞘翅航空设置
+      no-chunk-load: true # 是否不加载区块
+      no-chunk-height: 500.0 # 不加载区块的高度
+      no-chunk-speed: -1.0 # 不加载区块的速度
+      message: true # 是否发送消息
+      message-start: 已进入500以上，不再加载区块 # 进入巡航模式消息
+      message-end: 已进入500以下，开始加载区块 # 退出巡航模式消息
+    redstone-shears-wrench: false # 是否启用红石剪刀扳手
+    movable-budding-amethyst: false # 是否启用可移动紫水晶簇
+    spectator-dont-get-advancement: false # 旁观者是否不获得进度
+    stick-change-armorstand-arm-status: true # 木棍是否改变盔甲架手臂状态
+    snowball-and-egg-can-knockback-player: true # 雪球和鸡蛋是否能击退玩家
+    flatten-triangular-distribution: false # 是否平坦化三角分布
+    player-operation-limiter: false # 是否启用玩家操作限制器
+    renewable-elytra: -1.0 # 可再生鞘翅
+    shulker-box: # 潜影盒设置
+      stackable-shulker-boxes: false # 是否启用可堆叠潜影盒
+      same-nbt-stackable: false # 是否启用相同NBT可堆叠
+    force-void-trade: false # 是否强制虚空交易
+    mc-technical-survival-mode: true # 是否启用MC技术生存模式
+    return-nether-portal-fix: false # 是否修复返回下界传送门
+    use-vanilla-random: false # 是否使用原版随机数
+    fix-update-suppression-crash: true # 是否修复更新抑制崩溃
+    bedrock-break-list: false # 基岩破坏列表
+    disable-distance-check-for-use-item: false # 是否禁用使用物品的距离检查
+    no-feather-falling-trample: false # 是否禁用摔落保护踩踏
+    shared-villager-discounts: false # 是否启用共享村民折扣
+    disable-check-out-of-order-command: false # 是否禁用乱序命令检查
+    despawn-enderman-with-block: false # 是否启用末影人携带方块消失
+    creative-no-clip: false # 创造模式是否无碰撞
+    shave-snow-layers: true # 是否削减雪层
+    disable-packet-limit: false # 是否禁用数据包限制
+    lava-riptide: false # 是否启用熔岩激流
+    no-block-update-command: false # 是否禁用方块更新命令
+    no-tnt-place-update: false # 是否禁用TNT放置更新
+    raider-die-skip-self-raid-check: false # 掠夺者死亡是否跳过自身袭击检查
+    container-passthrough: false # 是否启用容器直通
+    avoid-anvil-too-expensive: false # 是否避免铁砧过于昂贵
+    bow-infinity-fix: false # 是否修复弓无限附魔
+    hopper-counter: # 漏斗计数器设置
+      enable: false # 是否启用
+      unlimited-speed: false # 是否无限速度
+    spider-jockeys-drop-gapples: -1.0 # 蜘蛛骑士是否掉落金苹果
+    renewable-deepslate: false # 可再生深板岩
+    renewable-sponges: false # 可再生海绵
+    renewable-coral: 'FALSE' # 可再生珊瑚
+    disable-vault-blacklist: false # 是否禁用Vault黑名单
+    exp-orb-absorb-mode: VANILLA # 经验球吸收模式
+  performance: # 性能设置
+    remove: # 移除设置
+      tick-guard-lambda: true # 是否移除刻守护lambda
+      damage-lambda: true # 是否移除伤害lambda
+    optimized-dragon-respawn: false # 是否优化末影龙重生
+    dont-send-useless-entity-packets: true # 是否不发送无用实体数据包
+    enable-suffocation-optimization: true # 是否启用窒息优化
+    check-spooky-season-once-an-hour: true # 是否每小时检查一次幽灵季节
+    inactive-goal-selector-disable: false # 是否禁用不活跃目标选择器
+    reduce-entity-allocations: true # 是否减少实体分配
+    cache-climb-check: true # 是否缓存攀爬检查
+    reduce-chuck-load-and-lookup: true # 是否减少区块加载和查找
+    cache-ignite-odds: true # 是否缓存点燃几率
+    faster-chunk-serialization: true # 是否加快区块序列化
+    skip-secondary-POI-sensor-if-absent: true # 如果次要POI传感器不存在是否跳过
+    store-mob-counts-in-array: true # 是否将生物计数存储在数组中
+    optimize-noise-generation: false # 是否优化噪声生成
+    optimize-sun-burn-tick: true # 是否优化阳光灼烧刻
+    optimized-CubePointRange: true # 是否优化CubePointRange
+    check-frozen-ticks-before-landing-block: true # 在落地方块前是否检查冻结刻
+    skip-entity-move-if-movement-is-zero: true # 如果实体移动为零是否跳过实体移动
+    skip-cloning-advancement-criteria: false # 是否跳过克隆进度标准
+    skip-negligible-planar-movement-multiplication: true # 是否跳过可忽略的平面移动乘法
+    sleeping-block-entity: false # 是否启用睡眠方块实体
+  protocol: # 协议设置
+    bladeren: # Bladeren协议
+      protocol: true # 是否启用协议
+      mspt-sync-protocol: false # 是否启用MSPT同步协议
+      mspt-sync-tick-interval: 20 # MSPT同步刻间隔
+    syncmatica: # Syncmatica协议
+      enable: false # 是否启用
+      quota: false # 是否启用配额
+      quota-limit: 40000000 # 配额限制
+    pca: # PCA协议
+      pca-sync-protocol: false # 是否启用PCA同步协议
+      pca-sync-player-entity: OPS # PCA同步玩家实体
+    appleskin: # AppleSkin协议
+      protocol: false # 是否启用协议
+      sync-tick-interval: 20 # 同步刻间隔
+    servux: # Servux协议
+      structure-protocol: false # 是否启用结构协议
+      entity-protocol: false # 是否启用实体协议
+      hud-metadata-protocol: false # 是否启用HUD元数据协议
+      hud-logger-protocol: false # 是否启用HUD日志协议
+      hud-enabled-loggers: # 启用的HUD日志器
+        - TPS
+        - MOB_CAPS
+      hud-update-interval: 1 # HUD更新间隔
+      hud-metadata-protocol-share-seed: true # HUD元数据协议是否共享种子
+      litematics: # Litematics协议
+        enable: false # 是否启用
+        max-nbt-size: 2097152 # 最大NBT大小
+    bbor-protocol: false # 是否启用BBOR协议
+    jade-protocol: false # 是否启用Jade协议
+    alternative-block-placement: NONE # 替代方块放置
+    xaero-map-protocol: false # 是否启用Xaero地图协议
+    xaero-map-server-id: -816688267 # Xaero地图服务器ID
+    leaves-carpet-support: false # 是否启用Leaves地毯支持
+    rei-server-protocol: false # 是否启用REI服务器协议
+    chat-image-protocol: false # 是否启用聊天图片协议
+  misc: # 杂项设置
+    auto-update: # 自动更新设置
+      enable: false # 是否启用
+      download-source: application # 下载源
+      allow-experimental: false # 是否允许实验性版本
+      time: # 更新时间
+        - '14:00'
+        - '2:00'
+    extra-yggdrasil-service: # 额外Yggdrasil服务
+      enable: false # 是否启用
+      login-protect: false # 是否启用登录保护
+      urls: # URL列表
+        - https://url.with.authlib-injector-yggdrasil
+    disable-method-profiler: true # 是否禁用方法分析器
+    no-chat-sign: true # 是否禁用聊天牌子
+    dont-respond-ping-before-start-fully: true # 在完全启动前是否不响应ping
+    server-lang: zh_cn # 服务器语言
+    server-mod-name: Leaves_lemwood # 服务器模组名称
+    bstats-privacy-mode: false # bStats隐私模式
+    force-minecraft-command: false # 是否强制Minecraft命令
+    leaves-packet-event: false # Leaves数据包事件
+    chat-command-max-length: 32767 # 聊天命令最大长度
+  region: # 区域设置
+    format: ANVIL # 区域格式
+    linear: # 线性区域设置
+      version: V2 # 版本
+      flush-max-threads: 6 # 最大刷新线程数
+      flush-delay-ms: 100 # 刷新延迟（毫秒）
+      use-virtual-thread: true # 是否使用虚拟线程
+      compression-level: 1 # 压缩级别
+  fix: # 修复设置
+    vanilla-hopper: false # 是否修复原版漏斗
+    vanilla-display-name: true # 是否修复原版显示名称
+    vanilla-portal-handle: true # 是否修复原版传送门处理
+    vanilla-fluid-pushing: true # 是否修复原版流体推动
+    collision-behavior: BLOCK_SHAPE_VANILLA # 碰撞行为
+config-version: 6 # 配置版本

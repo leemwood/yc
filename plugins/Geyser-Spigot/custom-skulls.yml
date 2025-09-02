@@ -1,0 +1,43 @@
+# --------------------------------
+# Geyser 自定义头像配置文件
+# --------------------------------
+
+# 此文件用于配置自定义玩家头像，当 'add-custom-skull-blocks' 选项启用时生效。
+# 主要配置值位于 'config.yml' 文件中。
+
+# --------------------------------
+# Java 版玩家用户名
+# --------------------------------
+
+# 通过指定玩家用户名，可以将对应玩家的头像转换为自定义方块显示。
+# 当 Geyser 启动时，会更新这些玩家的头像信息。
+# 如果有玩家更改了皮肤，玩家需要重新下载资源包才能看到更新。
+player-usernames:
+#  - GeyserMC
+
+# --------------------------------
+# Java 版玩家 UUID
+# --------------------------------
+
+# 通过指定玩家的 UUID，可以实现与玩家用户名相同的自定义头像效果。
+# 注意：与用户名一样，如果玩家更改了皮肤，需要重新下载资源包。
+player-uuids:
+#  - 8b8d8e8f-2759-47c6-acb5-5827de8a72b8
+
+# --------------------------------
+# 玩家头像配置
+# --------------------------------
+
+# 这里可以指定玩家头像的详细配置，包括头像的 NBT 数据。
+# 这种方法可以更精确地控制头像的显示，但需要了解 NBT 数据的结构。
+player-profiles:
+#  - ewogICJ0aW1lc3RhbXAiIDogMTY1NzMyMjIzOTgzMywKICAicHJvZmlsZUlkIiA6ICJjZGRiZTUyMGQwNDM0YThiYTFjYzlmYzkyZmRlMmJjZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbWJlcmljaHUiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkwNzkwYzU3ZTE4MWVkMTNhZGVkMTRjNDdlZTJmN2M4ZGUzNTMzZTAxN2JhOTU3YWY3YmRmOWRmMWJkZTk0ZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9
+
+# --------------------------------
+# 皮肤哈希值
+# --------------------------------
+
+# 通过指定皮肤的哈希值，可以直接在 Minecraft 的皮肤服务器上获取对应的皮肤。
+# 这种方法适用于不需要详细配置玩家信息，但知道皮肤哈希值的情况。
+skin-hashes:
+#  - a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f

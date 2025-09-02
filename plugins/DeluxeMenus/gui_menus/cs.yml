@@ -1,0 +1,455 @@
+# DeluxeMenus 基本配置指南（适用于初学者）
+#=========================================================
+#
+# 本注释将帮助您了解DeluxeMenus的基本功能和配置方法，包括命令、要求、物品等，并在此基础上您可以开始使用更高级的功能。您可以随时删除此注释或以下任何注释。
+#
+
+# 打开命令
+#
+# 此设置用于指定打开此菜单的命令。支持普通字符串或字符串列表
+# 注意：使用 "open_command: []" 可以创建一个无需命令即可打开的菜单
+#
+# open_command: <命令>
+# open_command:
+#   - <命令1>
+#   - <命令2>
+#
+open_command: cs
+
+register_command: true
+
+# 菜单大小
+#
+# 此设置允许您设置菜单库存的大小，范围为9-54。
+# 如果此选项在菜单配置中不存在，则默认为54。
+#
+size: 54
+
+# 菜单标题
+#
+# 这是菜单的标题。您可以使用自定义名称进行更改
+# 支持颜色代码和占位符
+#
+menu_title: '传送菜单'
+
+# 打开要求
+#
+# 此设置部分允许您定义菜单查看者必须满足的要求
+# 才能在游戏中打开此菜单。
+#
+# 您希望基于权限限制访问的任何菜单
+# 应该有一个基本的“拥有权限”要求
+#
+# 有关此设置和要求的更多说明，请参阅
+# 您的菜单文件夹中的 requirements_menu.yml 文件。
+# 详细参考：https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements
+#
+open_requirement:
+  requirements:
+    permission:
+      type: has permission
+      permission: deluxemenus.admin
+      deny_commands:
+        - '[message] &c您没有权限执行此操作！'
+
+# 物品部分。在这里您可以开始向菜单中添加物品，并为每个物品添加功能。
+# 有关功能的更多说明，请参阅 config.yml 中提供的注释。
+# 详细参考：https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/item
+#
+items:
+
+  'rtp':
+    material: Ender_Pearl
+    
+    slot: 10
+    display_name: "&a随机传送"
+    lore:
+      - "&a点我随机传送"
+    left_click_requirement:
+      requirements:
+        1:
+          type: has permission
+          permission: 'deluxemenus.menu'
+
+    left_click_commands:
+      - '[player] rtp'
+    
+  'tpaccept':
+    material: Lime_Wool
+    
+    slot: 12
+    display_name: "&a接受玩家传送"
+    lore:
+      - "&a点我接受玩家传送。"
+    left_click_requirement:
+      requirements:
+        1:
+          type: has permission
+          permission: 'deluxemenus.menu'
+
+    left_click_commands:
+      - '[player] tpaccept'
+
+  'tpdeny':
+    material: Red_Wool
+    
+    slot: 13
+    display_name: "&c拒绝玩家传送"
+    lore:
+      - "&c点我拒绝玩家传送。"
+    left_click_requirement:
+      requirements:
+        1:
+          type: has permission
+          permission: 'deluxemenus.menu'
+
+    left_click_commands:
+      - '[player] tpdeny'
+
+  'tpaall':
+    material: Light_Blue_Wool
+    
+    slot: 14
+    display_name: "&b请求所有玩家传送至我"
+    lore:
+      - "&b点我请求所有玩家传送至我。"
+    left_click_requirement:
+      requirements:
+        1:
+          type: has permission
+          permission: 'deluxemenus.menu'
+
+    left_click_commands:
+      - '[player] tpaall'
+  
+  'fanhui':
+    material: Beacon
+    
+    slot: 16
+    display_name: "&b返回上一个位置"
+    lore:
+      - "&b点我返回上一个位置。"
+    left_click_requirement:
+      requirements:
+        1:
+          type: has permission
+          permission: 'deluxemenus.menu'
+  
+    left_click_commands:
+      - '[player] back'
+  'TPA':
+    material: head-%player_name%
+    slot: 22
+    display_name: "&a玩家传送"
+    lore:
+      - "&a点我传送至玩家"
+    left_click_requirement:
+      requirements:
+        1:
+          type: has permission
+          permission: 'deluxemenus.menu'
+    left_click_commands:
+      - '[player] tpag'
+
+  'home':
+    material: White_Bed
+    
+    slot: 38
+    display_name: "&a打开家菜单"
+    lore:
+      - "&a左键点击打开已有家列表"
+      - "&s你可以在这菜单上传送，编辑，删除家"
+    left_click_requirement:
+      requirements:
+        1:
+          type: has permission
+          permission: 'deluxemenus.menu'
+
+    left_click_commands:
+      - '[player] homelist'
+
+
+  'phome':
+      material: Red_Mushroom_Block
+      data: 3
+      slot: 40
+      display_name: "&a公共的家"
+      lore:
+        - "&a左键点击打开公共家列表"
+        - "&s你可以在这菜单上传送，并编辑，删除自己的家"
+      left_click_requirement:
+        requirements:
+          1:
+            type: has permission
+            permission: 'deluxemenus.menu'
+          deny_commands:
+            - '[message] &c你没有权限执行此操作！'
+      left_click_commands:
+        - '[player] phomelist'
+
+  'warp':
+    material: Enchanting_Table
+    data: 5
+    slot: 42
+    display_name: "&a地标菜单"
+    lore:
+      - "&a左键点击打开地标菜单"
+    left_click_requirement:
+        requirements:
+          1:
+            type: has permission
+            permission: 'deluxemenus.menu'
+          deny_commands:
+            - '[message] &c你没有权限执行此操作！'
+    left_click_commands:
+      - '[player] warplist'
+
+  'back':
+    material: Barrier
+    
+    slot: 53
+    display_name: "&a返回"
+    lore:
+      - "&a左键点击返回"
+    left_click_requirement:
+        requirements:
+          1:
+            type: has permission
+            permission: 'deluxemenus.menu'
+          deny_commands:
+            - '[message] &c你没有权限执行此操作！'
+    left_click_commands:
+    - '[player] cd'
+
+  'help':
+    material: Book
+    
+    slot: 31
+    display_name: "&a帮助"
+    lore:
+      - "&a传送至玩家命令"
+      - "&a传送至玩家：/tp <玩家名>"
+      - "&a传送至玩家：/tpa <玩家名>"
+      - "&a传送至玩家：/tpaccept <玩家名>"
+      - "&a拒绝玩家传送：/tpdeny <玩家名>"
+      - "&a请求所有玩家传送至我：/tpaall"
+      - "&a返回上一个位置：/back"
+      - "&a设置家：/sethome <家名>"
+      - "&a删除家：/delhome <家名>"
+      - "&a传送至家：/home <家名>"
+  
+  '0':
+    material: Light_Gray_Stained_Glass_Pane
+    
+    slot: 0
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '1':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 1
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '2':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 2
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '3':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 3
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '4':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 4
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '5':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 5
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '6':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 6
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '7':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 7
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '8':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 8
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '9':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 9
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '11':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 11
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '15':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 15
+    display_name: "&5别再戳我了喵！"
+  '17':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 17
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '18':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 18
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '19':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 19
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '20':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 20
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '21':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 21
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '23':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 23
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '24':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 24
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '25':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 25
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '26':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 26
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '27':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 27
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '28':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 28
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '29':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 29
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '30':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 30
+    display_name: "&5别再戳我了喵！"
+    lore: []   
+  '32':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 32
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '33':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 33
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '34':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 34
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '35':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 35
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '36':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 36
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '37':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 37
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '39':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 39
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '41':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 41
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '43':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 43
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '44':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 44
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '45':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 45
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '46':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 46
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '47':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 47
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '48':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 48
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '49':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 49
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '50':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 50
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '51':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 51
+    display_name: "&5别再戳我了喵！"
+    lore: []
+  '52':
+    material: Light_Gray_Stained_Glass_Pane
+    slot: 52
+    display_name: "&5别再戳我了喵！"
+    lore: []

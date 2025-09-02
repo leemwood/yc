@@ -1,0 +1,6 @@
+欢迎玩家{PLAYER}加入{SERVER}服务器！
+文明游戏，人人有责。
+祝您游戏愉快！
+
+可以将此登录成功消息自定义，相对路径为plugins\AuthMe\welcome.txt
+

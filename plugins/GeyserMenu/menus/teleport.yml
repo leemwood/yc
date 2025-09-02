@@ -1,0 +1,39 @@
+menu:
+  title: "§9传送菜单"
+  subtitle: "§7选择你要传送的地点"
+  content: "§f点击下方按钮传送到对应地点"
+  items:
+    - text: "§c返回上级菜单"
+      icon: "arrow"
+      icon_type: "java"
+      submenu: "menu.yml"
+    
+    - text: "§e传送至玩家"
+      icon: "diamond_pickaxe"
+      icon_type: "java"
+      command: "tpag"
+      execute_as: "player"
+    
+    - text: "§a家"
+      icon: "White_Bed"
+      icon_type: "java"
+      command: "homef"
+      execute_as: "player"
+
+    - text: "§b传送至公共的家"
+      icon: "iron_door"
+      icon_type: "java"
+      command: "phomef"
+      execute_as: "player"
+    
+    - text: "§c地表"
+      icon: "dirt"
+      icon_type: "java"
+      command: "warpf"
+      execute_as: "player"
+    
+    - text: "§a返回上一个位置"
+      icon: "wheat"
+      icon_type: "java"
+      command: "back"
+      execute_as: "player"

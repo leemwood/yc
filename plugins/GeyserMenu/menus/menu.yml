@@ -1,0 +1,22 @@
+menu:
+  title: "§b我的服务器"
+  subtitle: "§7开始你的冒险吧！"
+  content: |-
+    §e这是服务器的主菜单
+    §f你可以在这里选择要进行的操作
+    §7点击下方按钮开始吧
+  footer: "§8在线: %server_online%/30 "
+  items:
+    - text: "§a传送菜单"
+      description: ""
+      icon: "textures/通用标点/七天神像"
+      icon_type: "bedrock"
+      submenu: "teleport.yml"
+
+    - text: "§a打开间歇泉拓展表单"
+      description: "§2副手切换在这里"
+      icon: "textures/城区内标点/商店 (描边，地下)"
+      icon_type: "bedrock"
+      commands: "ge"
+      command_as: "player"
+      

@@ -1,0 +1,275 @@
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Header-&-Footer
+header-footer:
+  enabled: true  # 启用头部和底部显示
+  header:
+    - "<#FFFFFF>&m                                                </#FFFF00>"  # 头部顶部的分隔线
+    - "&3&l我的服务器"  # 服务器名称
+    - "&7&l>> %animation:Welcome%&3 &l%player%&7&l! &7&l<<"  # 欢迎动画和玩家名称
+    - "&7在线玩家: &f%online%"  # 在线玩家数量
+    - "&6在线管理: &e%staffonline%"  # 在线工作人员数量
+    - ""  # 空行
+  footer:
+    - "%animation:time%"  # 时间动画
+    - "&2延迟: %ping%"  # 玩家延迟
+    - "&7&l 使用内存: %memory-used% MB / %memory-max% MB"  # 使用的内存
+    - ""  # 空行
+    - "&7访问我们的网站 %animation:web%"  # 访问网页动画
+    - "<#FFFFFF>&m                                                </#FFFF00>"  # 底部底部的分隔线
+  disable-condition: '%world%=disabledworld'  # 禁用条件
+  per-world:  # 按世界配置
+    world1:
+      header:
+        - "一个自定义的世界"  # 自定义头部示例
+      footer:
+        - "头部/底部和前缀/后缀"  # 自定义底部和前缀/后缀
+    world2;world3:
+      header:
+        - "这是两个世界的共享头部"  # 共享头部示例
+        - "world2和world3"  # 世界2和世界3
+  per-server:  # 按服务器配置
+    server1:
+      header:
+        - "一个自定义的服务器"  # 自定义头部示例
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Tablist-name-formatting
+tablist-name-formatting:
+  enabled: true  # 启用标签列表名称格式化
+  anti-override: true  # 防止覆盖
+  disable-condition: '%world%=disabledworld'  # 禁用条件
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Nametags
+scoreboard-teams:
+  enabled: true  # 启用计分板队伍
+  enable-collision: true  # 启用碰撞
+  invisible-nametags: false  # 不可见名称标签
+  anti-override: true  # 防止覆盖
+  # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Sorting-players-in-tablist
+  sorting-types:
+    - "GROUPS:owner,admin,mod,helper,builder,vip,default"  # 排序类型
+    - "PLACEHOLDER_A_TO_Z:%pnn%"  # 按玩家名称排序
+  case-sensitive-sorting: true  # 区分大小写排序
+  can-see-friendly-invisibles: false  # 友好不可见玩家可见性
+  disable-condition: '%world%=disabledworld'  # 禁用条件
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Playerlist-Objective
+playerlist-objective:
+  enabled: false  # 启用玩家列表目标
+  value: "%ping%"  # 值
+  fancy-value: "&7延迟: %ping%"  # 美化值
+  disable-condition: '%world%=disabledworld'  # 禁用条件
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Belowname
+belowname-objective:
+  enabled: false  # 启用下方名称目标
+  value: "%health%"  # 值
+  title: "&c生命值"  # 标题
+  fancy-value: "&c%health%"  # 美化值
+  fancy-value-default: "NPC"  # 默认美化值
+  disable-condition: '%world%=disabledworld'  # 禁用条件
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Spectator-fix
+prevent-spectator-effect:
+  enabled: false  # 启用旁观者效果防止
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Bossbar
+bossbar:
+  enabled: false  # 启用生命条
+  toggle-command: /bossbar  # 切换命令
+  remember-toggle-choice: false  # 记住切换选择
+  hidden-by-default: false  # 默认隐藏
+  bars:
+    ServerInfo:
+      style: "PROGRESS"  # 样式
+      color: "%animation:barcolors%"  # 颜色
+      progress: "100"  # 进度
+      text: "&fWebsite: &bwww.domain.com"  # 文本
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Scoreboard
+scoreboard:
+  enabled: true  # 启用计分板
+  toggle-command: /sb  # 切换命令
+  remember-toggle-choice: true  # 记住切换选择
+  hidden-by-default: false  # 默认隐藏
+  use-numbers: true  # 使用数字
+  static-number: 0  # 静态数字
+  delay-on-join-milliseconds: 15  # 加入延迟毫秒
+  scoreboards:
+    scoreboard-1.20.3+:
+      title: "<#E0B11E>我的服务器</#FF0000>"  # 标题
+      display-condition: "%player-version-id%>=765;%bedrock%=false"  # 显示条件
+      lines:
+        - "&7%date%"  # 日期
+        - "%animation:MyAnimation1%"  # 动画
+        - "&6信息:"  # 在线
+        - "* &e在线&7:||%online%"  # 在线玩家数量
+        - "* &b延迟&7:||%player_ping%&8ms"  # 玩家延迟
+        - "* &b世界&7:||%wav%"  # 玩家世界
+        - "&3服务器tps&7:"
+        - "&81秒&e%server_tps_1%_&85秒&2%server_tps_5%_&815秒&a%server_tps_15%"
+        - "%animation:MyAnimation1%"  # 动画
+    scoreboard:
+      title: "<#E0B11E>我的服务器</#FF0000>"  # 标题
+      lines:
+        - "&7%date%"  # 日期
+        - "%animation:MyAnimation1%"  # 动画
+        - "&6信息:"  # 在线
+        - "* &e在线&7: &f%online%"  # 在线玩家数量
+        - "* &b延迟&7: &f%player_ping%&8ms"  # 玩家延迟
+        - "* &b世界&7: &f%wav%"  # 玩家世界
+        - "&3服务器tps&7:"
+        - "&81秒&e%server_tps_1%_&85秒&2%server_tps_5%_&815秒&a%server_tps_15%"
+        - "%animation:MyAnimation1%"  # 动画
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Layout
+layout:
+  enabled: false  # 启用布局
+  direction: COLUMNS  # 方向
+  default-skin: mineskin:383747683  # 默认皮肤
+  enable-remaining-players-text: true  # 启用剩余玩家文本
+  remaining-players-text: '... and %s more'  # 剩余玩家文本
+  empty-slot-ping-value: 1000  # 空槽延迟值
+  layouts:
+    default:
+      fixed-slots:
+        - '1|&3Website&f:'  # 固定槽1
+        - '2|&bmyserver.net'  # 固定槽2
+        - '3|&8&m                       '  # 固定槽3
+        - '4|&3Name&f:'  # 固定槽4
+        - '5|&b%player%'  # 固定槽5
+        - '7|&3Rank&f:'  # 固定槽7
+        - '8|Rank: %group%'  # 固定槽8
+        - '10|&3World&f:'  # 固定槽10
+        - '11|&b%world%'  # 固定槽11
+        - '13|&3Time&f:'  # 固定槽13
+        - '14|&b%time%'  # 固定槽14
+        - '21|&3Teamspeak&f:'  # 固定槽21
+        - '22|&bts.myserver.net'  # 固定槽22
+        - '23|&8&m                       '  # 固定槽23
+        - '41|&3Store&f:'  # 固定槽41
+        - '42|&bshop.myserver.net'  # 固定槽42
+        - '43|&8&m                       '  # 固定槽43
+      groups:
+        staff:
+          condition: permission:tab.staff  # 条件
+          slots:
+            - 24-40  # 槽位
+        players:
+          slots:
+            - 44-80  # 槽位
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Ping-Spoof
+ping-spoof:
+  enabled: false  # 启用延迟欺骗
+  value: 0  # 值
+
+placeholders:
+  date-format: "yyyy-MM-dd"  # 日期格式
+  time-format: "[HH:mm:ss / h:mm a]"  # 时间格式
+  time-offset: 0  # 时间偏移
+  register-tab-expansion: false  # 注册TAB扩展
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Placeholder-output-replacements
+placeholder-output-replacements:
+  "%essentials_vanished%":
+    "yes": "&7| Vanished"  # 是
+    "no": ""  # 否
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Conditional-placeholders
+conditions:
+  nick:  # 使用 %condition:nick%
+    conditions:
+      - "%player%=%essentials_nickname%"  # 条件
+    yes: "%player%"  # 是
+    no: "~%essentials_nickname%"  # 否
+
+placeholderapi-refresh-intervals:
+  default-refresh-interval: 500  # 默认刷新间隔
+  "%server_uptime%": 1000  # 服务器运行时间刷新间隔
+  "%server_tps_1_colored%": 1000  # 服务器TPS刷新间隔
+  "%server_unique_joins%": 5000  # 服务器唯一加入刷新间隔
+  "%player_health%": 200  # 玩家生命值刷新间隔
+  "%player_ping%": 1000  # 玩家延迟刷新间隔
+  "%vault_prefix%": 1000  # Vault前缀刷新间隔
+  "%rel_factionsuuid_relation_color%": 1000  # FactionsUUID关系颜色刷新间隔
+
+# 通过权限节点分配组而不是从权限插件获取
+assign-groups-by-permissions: false
+
+# 如果上面的选项为true，所有组都基于权限获取，并且此列表中的最高组被用作主要组
+# 警告！这不是排序列表，与标签列表中的玩家排序无关！
+primary-group-finding-list:
+  - Owner  # 所有者
+  - Admin  # 管理员
+  - Mod  # 模组
+  - Helper  # 辅助
+  - default  # 默认
+
+# 权限检查、组获取、前缀/后缀占位符数据刷新间隔（毫秒）
+permission-refresh-interval: 1000
+
+# 解锁额外的控制台消息
+debug: false
+
+# https://github.com/NEZNAMY/TAB/wiki/MySQL
+mysql:
+  enabled: false  # 启用MySQL
+  host: 127.0.0.1  # 主机
+  port: 3306  # 端口
+  database: tab  # 数据库
+  username: user  # 用户名
+  password: password  # 密码
+  useSSL: true  # 使用SSL
+
+########################################################################
+# BUKKIT ONLY - THE FOLLOWING SECTION IS ONLY FOR BACKEND INSTALLATION #
+########################################################################
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Per-world-playerlist
+per-world-playerlist:
+  enabled: false  # 启用按世界玩家列表
+  # 具有tab.staff权限的玩家将始终看到所有玩家
+  allow-bypass-permission: false
+  # 这些世界的玩家将始终看到所有玩家
+  ignore-effect-in-worlds:
+    - ignoredworld  # 忽略的世界
+    - build  # 构建
+  shared-playerlist-world-groups:
+    lobby:
+      - lobby1  # 大厅1
+      - lobby2  # 大厅2
+    minigames:
+      - paintball  # 涂鸦球
+      - bedwars  # 床战
+
+#####################################################################
+# PROXY ONLY - THE FOLLOWING SECTION IS ONLY FOR PROXY INSTALLATION #
+#####################################################################
+
+# https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Global-playerlist
+global-playerlist:
+  enabled: false  # 启用全局玩家列表
+  display-others-as-spectators: false  # 显示其他玩家为旁观者
+  display-vanished-players-as-spectators: true  # 显示隐身玩家为旁观者
+  isolate-unlisted-servers: false  # 隔离未列出的服务器
+  update-latency: false  # 更新延迟
+  spy-servers:
+    - spyserver1  # 间谍服务器1
+    - spyserver2  # 间谍服务器2
+  server-groups:
+    lobbies:
+      - lobby1  # 大厅1
+      - lobby2  # 大厅2
+    group2:
+      - server1  # 服务器1
+      - server2  # 服务器2
+
+# 从后端服务器而不是代理服务器获取权限和组
+use-bukkit-permissions-manager: false
+
+# 有时服务器可能在标签列表中使用离线UUID而不是在线UUID，例如禁用waterfall的标签列表重写选项
+# 如果遇到标签列表格式化问题，请切换此选项（设置为相反值）
+# 仅影响启用在线模式的代理
+use-online-uuid-in-tablist: true
+
+# 如果启用并且找到RedisBungee插件，将启用与所有代理上的玩家挂钩
+enable-redisbungee-support: true

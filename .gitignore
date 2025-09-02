@@ -1,0 +1,23 @@
+### AL ###
+#Template for AL projects for Dynamics 365 Business Central
+#launch.json folder
+.vscode/
+/auto_update
+/cache
+/libraries
+/logs
+/versions
+/world
+/world_nether
+/world_the_end
+.console_history
+banned-ips.json
+banned-players.json
+commands.yml
+help.yml
+ops.json
+permissions.yml
+usercache.json
+version_history.json
+whitelist.json
+*.log

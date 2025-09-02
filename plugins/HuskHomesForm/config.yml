@@ -1,0 +1,82 @@
+messages:
+  no-homes: "§c你还没有设置任何家!"
+  no-public-homes: "§c没有任何公共家!"
+  no-warps: "§c没有任何传送点!"
+  
+  system:
+    player-only: "§c该命令只能由玩家执行!"
+    no-permission: "§c你没有权限使用此命令!"
+    form-send-failed: "§c表单发送失败，请重试!"
+    setting-home: "§a正在设置家园: {0}"
+    setting-public-home: "§a正在设置公共家: {0}"
+    setting-warp: "§a正在设置传送点: {0}"
+    empty-player-or-homes: "传入了空的玩家或家园列表!"
+    empty-player-or-public-homes: "传入了空的玩家或公共家园列表!"
+    empty-player-or-warps: "传入了空的玩家或传送点列表!"
+    home-set-to-public: "§a已将家园 {0} 设置为公共家"
+    home-renamed: "§a已将家园 {0} 重命名为 {1}"
+    database-error: "§c获取数据时出错，请稍后重试或联系管理员!"
+  
+  debug:
+    open-home-manage: "为玩家 {0} 打开家园管理表单"
+    available-homes: "可用的家园: {0}"
+    open-public-home-manage: "为玩家 {0} 打开公共家园管理表单"
+    available-public-homes: "可用的公共家园: {0}"
+    open-warp-manage: "为玩家 {0} 打开传送点管理表单"
+    available-warps: "可用的传送点: {0}"
+    form-error: "发送表单时出错: {0}"
+  
+  form:
+    home-title: "我的家"
+    home-content: "请选择要传送的家:"
+    phome-title: "公共家"
+    phome-content: "请选择要传送的公共家:"
+    warp-title: "传送点"
+    warp-content: "请选择要传送的地点:"
+    manage-title: "家园管理"
+    manage-content: "请选择操作:"
+    sethome-title: "设置新家"
+    sethome-content: "请输入家的名称:"
+    delhome-title: "删除家园"
+    delhome-content: "请选择要删除的家:"
+    phome-manage-title: "公共家园管理"
+    phome-manage-content: "请选择操作:"
+    setphome-title: "设置公共家"
+    setphome-content: "请输入公共家的名称:"
+    delphome-title: "删除公共家"
+    delphome-content: "请选择要删除的公共家:"
+    warp-manage-title: "传送点管理"
+    warp-manage-content: "请选择操作:"
+    setwarp-title: "设置传送点"
+    setwarp-content: "请输入传送点名称:"
+    delwarp-title: "删除传送点"
+    delwarp-content: "请选择要删除的传送点:"
+    set-private-to-public-title: "设置为公共家"
+    set-private-to-public-content: "选择要设置为公共家的家:"
+    rename-home-select-title: "重命名家园"
+    rename-home-select-content: "选择要重命名的家园:"
+    rename-home-title: "重命名家园"
+    rename-home-input: "为 {0} 输入新名称:"
+    rename-home-placeholder: "例如: newname"
+    
+    # 输入提示和占位符
+    sethome-input: "请输入家的名称:"
+    sethome-placeholder: "例如: home1"
+    setphome-input: "请输入公共家的名称:"
+    setphome-placeholder: "例如: spawn"
+    setwarp-input: "请输入传送点名称:"
+    setwarp-placeholder: "例如: shop"
+    
+    # 按钮文本
+    button:
+      sethome: "+ 设置新家"
+      setphome: "+ 设置公共家"
+      setwarp: "+ 设置传送点"
+      teleport: "> 传送"
+      teleport-warp: "> 传送"
+      delete: "x 删除"
+      set-private-to-public: ">> 设为公共家"
+      rename: "@ 重命名"
+
+# 调试模式
+debug: false

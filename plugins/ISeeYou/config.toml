@@ -1,0 +1,37 @@
+deleteTmpFileOnLoad = true
+pauseInsteadOfStopRecordingOnPlayerQuit = false
+recordPath = "replay/player/${name}@${uuid}"
+asyncSave = false
+bStats = true
+check_for_updates = true
+
+[pauseRecordingOnHighSpeed]
+enabled = false
+threshold = 20.0
+
+[filter]
+checkBy = "name"
+recordMode = "blacklist"
+blacklist = []
+
+[clearOutdatedRecordFile]
+enabled = false
+interval = 24
+days = 7
+
+[recordSuspiciousPlayer]
+enableThemisIntegration = false
+enableMatrixIntegration = false
+enableVulcanIntegration = false
+enableNegativityIntegration = false
+enableGrimACIntegration = false
+enableLightAntiCheatIntegration = false
+enableSpartanIntegration = false
+recordMinutes = 5
+recordPath = "replay/suspicious/${name}@${uuid}"
+
+[instantReplay]
+enabled = false
+replayMinutes = 5
+createMinutes = 1
+recordPath = "replay/instant/${name}@${uuid}"
