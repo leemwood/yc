@@ -1,4 +1,4 @@
-# Minecraft Server Files
+.vscode/
 /auto_update
 /cache
 /libraries
@@ -21,3 +21,4 @@ whitelist.json
 *.db
 /.paper-remapped
 /lib
+/.trae
