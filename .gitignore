@@ -23,4 +23,4 @@ whitelist.json
 *.log
 *.db
 /.paper-remapped
-/plugins/AQQBot/lib
+/lib
