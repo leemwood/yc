@@ -21,3 +21,6 @@ usercache.json
 version_history.json
 whitelist.json
 *.log
+*.db
+/.paper-remapped
+/plugins/AQQBot/lib
