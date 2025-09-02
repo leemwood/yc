@@ -1,7 +1,4 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
-.vscode/
+# Minecraft Server Files
 /auto_update
 /cache
 /libraries
