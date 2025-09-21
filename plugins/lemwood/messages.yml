@@ -1,0 +1,33 @@
+# Lemwood 插件消息配置文件
+
+# 控制玩家加入服务器时是否广播消息
+join-broadcast-enabled: true
+join:
+  # 玩家加入服务器时广播的消息
+  broadcast: "§6>> §a欢迎 §b{player} §a加入服务器! §6<<"
+  
+# 控制玩家加入服务器时是否发送个人消息
+join-personal-enabled: true
+join:
+  # 玩家加入服务器时发送给玩家的个人消息
+  personal:
+    - "§2=================================="
+    - "§e欢迎你，§b{player}§e!"
+    - "§d祝你游戏愉快!"
+    - "§2=================================="
+    
+# 控制玩家离开服务器时是否广播消息
+quit-broadcast-enabled: true
+quit:
+  # 玩家离开服务器时广播的消息
+  broadcast: "§6<< §c{player} §c离开了服务器! §6>>"
+
+# 控制执行/lemwood命令时是否显示消息
+command-info-enabled: true
+command:
+  # 执行/lemwood命令时显示的消息
+  info:
+    - "§a===== Lemwood 插件 ====="
+    - "§b版本: §f{version}"
+    - "§b作者: §fLemwood"
+    - "§a======================="
