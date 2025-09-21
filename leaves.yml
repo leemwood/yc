@@ -32,7 +32,6 @@ settings: # 主要设置
         redstone-ignore-upwards-update: false # 红石是否忽略向上更新
         old-block-remove-behaviour: false # 是否启用旧版方块移除行为
       shears-in-dispenser-can-zero-amount: false # 发射器中的剪刀是否能将数量归零
-      armor-stand-cant-kill-by-mob-projectile: false # 盔甲架是否不能被生物投掷物杀死
       villager-infinite-discounts: false # 村民是否无限折扣
       copper-bulb-1gt-delay: false # 铜灯是否1游戏刻延迟
       crafter-1gt-delay: false # 合成台是否1游戏刻延迟
@@ -93,7 +92,6 @@ settings: # 主要设置
     lava-riptide: false # 是否启用熔岩激流
     no-block-update-command: false # 是否禁用方块更新命令
     no-tnt-place-update: false # 是否禁用TNT放置更新
-    raider-die-skip-self-raid-check: false # 掠夺者死亡是否跳过自身袭击检查
     container-passthrough: false # 是否启用容器直通
     avoid-anvil-too-expensive: false # 是否避免铁砧过于昂贵
     bow-infinity-fix: false # 是否修复弓无限附魔
@@ -197,6 +195,7 @@ settings: # 主要设置
       use-virtual-thread: true # 是否使用虚拟线程
       compression-level: 1 # 压缩级别
   fix: # 修复设置
+    vanilla-end-void-rings: false
     vanilla-hopper: false # 是否修复原版漏斗
     vanilla-display-name: true # 是否修复原版显示名称
     vanilla-portal-handle: true # 是否修复原版传送门处理
